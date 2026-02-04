@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Imersão 30 Dias — Dia 04</title>
+    <meta
+      name="description"
+      content="Site do Dia 04 da Imersão: layout moderno, tema escuro, cards, animações e botões."
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">
+          <span class="logo">⚡</span>
+          <div class="brand-text">
+            <strong>Imersão 30 Dias</strong>
+            <span>Dia 04 — Tema Escuro</span>
+          </div>
+        </div>
+
+        <nav class="menu">
+          <a class="menu-link active" href="#inicio">Início</a>
+          <a class="menu-link" href="#cards">Cards</a>
+          <a class="menu-link" href="#destaques">Destaques</a>
+          <a class="menu-link" href="#contato">Contato</a>
+        </nav>
+
+        <button id="btnTema" class="btn btn-ghost" type="button">
+          Alternar Glow
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- HERO -->
+      <section id="inicio" class="hero">
+        <div class="hero-left">
+          <p class="badge">🚀 Site pronto para GitHub</p>
+          <h1>
+            Dia 04 — Layout moderno <span class="gradient">tema escuro</span>
+          </h1>
+          <p class="subtitle">
+            Hoje o site ficou com um visual mais profissional: topbar fixa,
+            cards, botões animados e um toque de brilho ("glow") que você pode
+            ligar e desligar.
+          </p>
+
+          <div class="hero-actions">
+            <button id="btnAcao" class="btn btn-primary" type="button">
+              Ativar Efeito
+            </button>
+            <a class="btn btn-outline" href="#cards">Ver cards</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <span class="stat-number" id="stat1">0</span>
+              <span class="stat-label">Projetos</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" id="stat2">0</span>
+              <span class="stat-label">Linhas</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" id="stat3">0</span>
+              <span class="stat-label">Dias</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-right">
+          <div class="hero-card">
+            <h2>Checklist do Dia 04 ✅</h2>
+            <ul class="checklist">
+              <li>✔ Criar layout com topbar</li>
+              <li>✔ Criar cards com hover</li>
+              <li>✔ Botões bonitos</li>
+              <li>✔ JavaScript com interação</li>
+              <li>✔ Pronto para GitHub</li>
+            </ul>
+
+            <div class="notice">
+              <strong>Dica:</strong> esse layout já parece site de empresa.
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- CARDS -->
+      <section id="cards" class="section">
+        <header class="section-head">
+          <h2>Cards do Dia 04</h2>
+          <p>Um modelo top para você reaproveitar em qualquer projeto.</p>
+        </header>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Blog / Portal</h3>
+            <p>
+              Estrutura ideal para o seu projeto "A Graça da Adoração" com
+              páginas e posts.
+            </p>
+            <button class="btn btn-small btn-ghost" type="button">
+              Ver exemplo
+            </button>
+          </article>
+
+          <article class="card">
+            <h3>Site Profissional</h3>
+            <p>
+              Layout com navegação e seções. Perfeito para empresas e
+              apresentação.
+            </p>
+            <button class="btn btn-small btn-ghost" type="button">
+              Aplicar modelo
+            </button>
+          </article>
+
+          <article class="card">
+            <h3>Landing Page</h3>
+            <p>
+              Página única com CTA (botão de ação). Ideal para WhatsApp e vendas.
+            </p>
+            <button class="btn btn-small btn-ghost" type="button">
+              Criar landing
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- DESTAQUES -->
+      <section id="destaques" class="section">
+        <header class="section-head">
+          <h2>Destaques</h2>
+          <p>Interações feitas com JavaScript e efeitos visuais.</p>
+        </header>
+
+        <div class="highlight">
+          <div class="highlight-box">
+            <h3>Botão com efeito</h3>
+            <p>Clique no botão abaixo para mudar o texto na tela.</p>
+
+            <button id="btnMensagem" class="btn btn-primary" type="button">
+              Mostrar Mensagem
+            </button>
+
+            <p id="mensagem" class="mensagem"></p>
+          </div>
+
+          <div class="highlight-box">
+            <h3>Status do site</h3>
+            <p>Este site está:</p>
+
+            <div class="status">
+              <span class="dot"></span>
+              <span id="statusTexto">Online e pronto ✅</span>
+            </div>
+
+            <button id="btnStatus" class="btn btn-outline" type="button">
+              Alternar status
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section id="contato" class="section">
+        <header class="section-head">
+          <h2>Contato</h2>
+          <p>Bloco simples para você adaptar depois para WhatsApp.</p>
+        </header>
+
+        <div class="contact">
+          <div class="contact-box">
+            <h3>📩 Fale comigo</h3>
+            <p>
+              Se quiser, amanhã a gente coloca formulário e botão para WhatsApp.
+            </p>
+
+            <button id="btnWhats" class="btn btn-primary" type="button">
+              Simular WhatsApp
+            </button>
+          </div>
+
+          <div class="contact-box">
+            <h3>🧠 Próximo passo</h3>
+            <p>
+              Amanhã no Dia 05, podemos colocar:
+              <span class="tag">galeria</span>
+              <span class="tag">abas</span>
+              <span class="tag">FAQ</span>
+              <span class="tag">modo claro/escuro</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Feito por <strong>Wagner</strong> — Imersão 30 Dias •
+          <span id="ano"></span>
+        </p>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
