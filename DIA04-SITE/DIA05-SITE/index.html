@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imersão 30 Dias — Dia 05 (JS Avançado)</title>
+    <meta
+      name="description"
+      content="Dia 05 da Imersão: JavaScript mais avançado com estado, localStorage, scroll spy, reveal e interações."
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- Topbar -->
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <span class="brand-badge">⚡</span>
+        <span class="brand-text">
+          <strong>Imersão 30 Dias</strong>
+          <small>Dia 05 — JS avançado</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="nav-link is-active" href="#inicio">Início</a>
+        <a class="nav-link" href="#cards">Cards</a>
+        <a class="nav-link" href="#destaques">Destaques</a>
+        <a class="nav-link" href="#contato">Contato</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button class="btn btn-ghost" id="btnIntro" type="button" title="Mostrar/ocultar introdução">
+          Intro
+        </button>
+        <button class="btn btn-glow" id="btnGlow" type="button" title="Ligar/desligar glow">
+          Alternar Glow
+        </button>
+      </div>
+    </header>
+
+    <!-- Intro (controlada por JS) -->
+    <section class="intro" id="intro" aria-label="Introdução">
+      <div class="container intro-inner">
+        <div class="intro-left">
+          <span class="pill">🚀 Dia 05 — JavaScript mais avançado</span>
+          <h1 class="title">
+            Interações profissionais<br />
+            <span class="accent">sem bagunçar o layout</span>
+          </h1>
+          <p class="lead">
+            Hoje vamos usar <strong>estado</strong>, <strong>localStorage</strong>, <strong>scroll spy</strong>,
+            <strong>reveal</strong> e <strong>toasts</strong> para deixar seu site com cara de produto real.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#cards">Ver cards</a>
+            <button class="btn btn-outline" id="btnToast" type="button">Testar Toast</button>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong id="statProjetos">5</strong>
+              <span>Projetos</span>
+            </div>
+            <div class="stat">
+              <strong id="statLinhas">200+</strong>
+              <span>Linhas</span>
+            </div>
+            <div class="stat">
+              <strong>30</strong>
+              <span>Dias</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="intro-right reveal">
+          <h3 class="card-title">Checklist do Dia 05 ✅</h3>
+          <ul class="checklist">
+            <li>Estado do app + localStorage</li>
+            <li>Glow persistente (salva preferência)</li>
+            <li>Intro com toggle + animação</li>
+            <li>Scroll Spy (menu ativo)</li>
+            <li>Reveal ao rolar + Toaster</li>
+          </ul>
+
+          <div class="tip">
+            <strong>Dica:</strong> JS decide o comportamento. CSS desenha o visual.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <main class="container">
+      <!-- Cards -->
+      <section class="section" id="cards">
+        <div class="section-head reveal">
+          <h2>Cards do Dia 05</h2>
+          <p>Cards prontos para reuso + hover + botão de detalhes (modal).</p>
+        </div>
+
+        <div class="grid">
+          <article class="card reveal">
+            <h3>Blog / Portal</h3>
+            <p>Estrutura base para posts, categorias e páginas.</p>
+            <button class="btn btn-small btn-outline js-open" data-title="Blog / Portal" data-body="Perfeito para blog pessoal, portal de notícias e páginas de conteúdo.">
+              Ver detalhes
+            </button>
+          </article>
+
+          <article class="card reveal">
+            <h3>Landing Page</h3>
+            <p>Layout com CTA e foco em conversão.</p>
+            <button class="btn btn-small btn-outline js-open" data-title="Landing Page" data-body="Use para captar leads: CTA claro, prova social e formulário simples.">
+              Ver detalhes
+            </button>
+          </article>
+
+          <article class="card reveal">
+            <h3>Portfólio</h3>
+            <p>Seção de projetos com estética profissional.</p>
+            <button class="btn btn-small btn-outline js-open" data-title="Portfólio" data-body="Ideal para mostrar trabalhos e fechar serviços com confiança.">
+              Ver detalhes
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- Destaques -->
+      <section class="section" id="destaques">
+        <div class="section-head reveal">
+          <h2>Destaques</h2>
+          <p>Interações que melhoram experiência: âncoras suaves, menu ativo e preferência salva.</p>
+        </div>
+
+        <div class="highlight reveal">
+          <h3>Atalhos de teclado 🎯</h3>
+          <p>
+            <kbd>G</kbd> = alternar glow • <kbd>I</kbd> = intro • <kbd>T</kbd> = toast • <kbd>Esc</kbd> = fechar modal
+          </p>
+        </div>
+      </section>
+
+      <!-- Contato -->
+      <section class="section" id="contato">
+        <div class="section-head reveal">
+          <h2>Contato</h2>
+          <p>Formulário simples para treinar UI e JS (validação básica).</p>
+        </div>
+
+        <form class="form reveal" id="formContato">
+          <label>
+            <span>Nome</span>
+            <input type="text" name="nome" placeholder="Seu nome" required />
+          </label>
+
+          <label>
+            <span>E-mail</span>
+            <input type="email" name="email" placeholder="seuemail@exemplo.com" required />
+          </label>
+
+          <label>
+            <span>Mensagem</span>
+            <textarea name="mensagem" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+          </label>
+
+          <button class="btn btn-primary" type="submit">Enviar</button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <p>Imersão 30 Dias — Dia 05 • Feito no VS Code + Git + Vercel</p>
+      </footer>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-overlay" data-close></div>
+      <div class="modal-card" role="document">
+        <div class="modal-head">
+          <h3 id="modalTitle">Título</h3>
+          <button class="btn btn-ghost btn-icon" type="button" data-close aria-label="Fechar">✕</button>
+        </div>
+        <p id="modalBody">Conteúdo</p>
+        <div class="modal-actions">
+          <button class="btn btn-outline" type="button" data-close>Fechar</button>
+          <button class="btn btn-primary" id="modalOk" type="button">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast container -->
+    <div class="toasts" id="toasts" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
