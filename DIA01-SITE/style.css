@@ -1,0 +1,152 @@
+:root{
+  --bg: #0b1020;
+  --card: rgba(255,255,255,.06);
+  --card2: rgba(255,255,255,.08);
+  --text: #e8ecff;
+  --muted: rgba(232,236,255,.72);
+  --line: rgba(255,255,255,.12);
+  --accent: #7c5cff;
+  --accent2:#18d7ff;
+  --shadow: 0 18px 60px rgba(0,0,0,.35);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1100px 700px at 20% 10%, rgba(124,92,255,.25), transparent 60%),
+              radial-gradient(900px 600px at 80% 20%, rgba(24,215,255,.18), transparent 55%),
+              var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container{
+  width: min(980px, 92vw);
+  margin: 28px auto 56px;
+  display: grid;
+  gap: 18px;
+}
+
+.topo{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(7,10,20,.72);
+  backdrop-filter: blur(10px);
+}
+.topo h1{
+  font-size: 18px;
+  letter-spacing: .3px;
+}
+.topo p{
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.card{
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--card), rgba(255,255,255,.03));
+  border-radius: 18px;
+  padding: 18px 18px;
+  box-shadow: var(--shadow);
+}
+.card h2{
+  font-size: 34px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.card h3{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.subtitulo{
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.destaque{
+  border-color: rgba(124,92,255,.35);
+  background: linear-gradient(180deg, rgba(124,92,255,.12), rgba(255,255,255,.03));
+}
+
+blockquote{
+  border-left: 3px solid rgba(124,92,255,.8);
+  padding: 12px 14px;
+  margin: 10px 0 12px;
+  background: rgba(0,0,0,.18);
+  border-radius: 12px;
+}
+blockquote span{
+  display:block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.encerramento{
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.rodape{
+  border-top: 1px solid var(--line);
+  padding: 18px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Botão flutuante (JS cria) */
+.fab{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(10,14,30,.8);
+  backdrop-filter: blur(10px);
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, border-color .2s ease;
+}
+.fab:hover{
+  transform: translateY(-2px);
+  border-color: rgba(124,92,255,.55);
+}
+.fab .dot{
+  width: 9px;
+  height: 9px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+
+.toast{
+  position: fixed;
+  left: 50%;
+  bottom: 90px;
+  transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  pointer-events: none;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(10,14,30,.85);
+  backdrop-filter: blur(10px);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transition: opacity .25s ease, transform .25s ease;
+  font-size: 13px;
+}
+.toast.show{
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
