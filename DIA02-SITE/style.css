@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+  color: #333;
+}
+
+.topo {
+  background: #1e1e1e;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.conteudo {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+.card h2, .card h3 {
+  margin-bottom: 1rem;
+}
+
+.destaque {
+  border-left: 5px solid #555;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #ddd;
+}
